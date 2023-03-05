@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 
 function Square({ value, onSquareClick }) {
@@ -7,6 +8,8 @@ function Square({ value, onSquareClick }) {
     </button>
   );
 }
+
+export const MemoizedSquare = React.memo(Square);
 
 function Board({ xIsNext, squares, onPlay }) {
   function handleClick(i) {
@@ -34,19 +37,19 @@ function Board({ xIsNext, squares, onPlay }) {
     <>
       <div className="status">{status}</div>
       <div className="board-row">
-        <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
-        <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
-        <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
+        <MemoizedSquare value={squares[0]} onSquareClick={() => handleClick(0)} />
+        <MemoizedSquare value={squares[1]} onSquareClick={() => handleClick(1)} />
+        <MemoizedSquare value={squares[2]} onSquareClick={() => handleClick(2)} />
       </div>
       <div className="board-row">
-        <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
-        <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
-        <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
+        <MemoizedSquare value={squares[3]} onSquareClick={() => handleClick(3)} />
+        <MemoizedSquare value={squares[4]} onSquareClick={() => handleClick(4)} />
+        <MemoizedSquare value={squares[5]} onSquareClick={() => handleClick(5)} />
       </div>
       <div className="board-row">
-        <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
-        <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
-        <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+        <MemoizedSquare value={squares[6]} onSquareClick={() => handleClick(6)} />
+        <MemoizedSquare value={squares[7]} onSquareClick={() => handleClick(7)} />
+        <MemoizedSquare value={squares[8]} onSquareClick={() => handleClick(8)} />
       </div>
     </>
   );
