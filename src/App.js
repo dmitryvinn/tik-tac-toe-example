@@ -1,5 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
+import LogRocket from 'logrocket';
+
+LogRocket.init('wojyrt/test-project');
+
 
 function Square({ value, onSquareClick }) {
   return (
@@ -9,7 +13,8 @@ function Square({ value, onSquareClick }) {
   );
 }
 
-export const MemoizedSquare = React.memo(Square);
+// export const MemoizedSquare = React.memo(Square);
+export const MemoizedSquare = Square;
 
 function Board({ xIsNext, squares, onPlay }) {
   function handleClick(i) {
