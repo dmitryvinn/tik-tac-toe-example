@@ -1,8 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
 import LogRocket from 'logrocket';
+import setupLogRocketReact from 'logrocket-react';
 
 LogRocket.init('wojyrt/test-project');
+setupLogRocketReact(LogRocket);
 
 
 function Square({ value, onSquareClick }) {
